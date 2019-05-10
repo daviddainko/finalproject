@@ -1,11 +1,15 @@
-var svgWidth = 1300;
-var svgHeight = 750;
+var svgHeight=.7*$(window).height();
+var svgWidth=.7*$(window).width();
+
+// var svgWidth = 1300;
+// var svgHeight = 750;
 
 var margin = {
-  top: 20,
-  right: 40,
-  bottom: 100,
-  left: 100
+  top: .05*svgHeight,
+  right: .2*svgWidth,
+  bottom: .2*svgHeight,
+  left: .05*svgWidth,
+  padding: .1*svgHeight
 };
 
 var width = svgWidth - margin.left - margin.right;
@@ -250,32 +254,32 @@ d3.csv("alleducationandmortality1.csv", function(err, educationMortality) {
 });
 
 var rectangleWorld = svg.append("rect")
- .attr("x", 1100)
- .attr("y", 100)
- .attr("width", 35)
- .attr("height", 13)
+ .attr("x", .8*svgWidth)
+ .attr("y", .13*svgHeight)
+ .attr("width", .03*svgWidth)
+ .attr("height", .02*svgHeight)
  .attr("fill", "#529999")
  .attr("opacity", .5);
 
 var rectangleSubAfrica = svg.append("rect")
- .attr("x", 1100)
- .attr("y", 118)
- .attr("width", 35)
- .attr("height", 13)
+ .attr("x", .8*svgWidth)
+ .attr("y", .08*svgHeight)
+ .attr("width", .03*svgWidth)
+ .attr("height", .02*svgHeight)
  .attr("fill", "firebrick")
  .attr("opacity", .5);
 
 
 svg.append("text")
-   .attr("x", 1150)
-   .attr("y", 112)
+   .attr("x", .84*svgWidth)
+   .attr("y", .15*svgHeight)
    .attr("fill", "#529999")
    .attr("font-family", "Karla-Regular")
    .text("Rest of the World");
 
 svg.append("text")
-     .attr("x", 1150)
-     .attr("y", 130)
+     .attr("x", .84*svgWidth)
+     .attr("y", .1*svgHeight)
      .attr("fill", "firebrick")
      .attr("font-family", "Karla-Regular")
      .text("Sub-Saharan Africa");
